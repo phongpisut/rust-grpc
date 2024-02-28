@@ -1,0 +1,23 @@
+[package]
+name = "rust-basic"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "server"
+path = "./src/server.rs"
+
+# [[bin]]
+# name = "client"
+# path = "./src/client.rs"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+tonic = "0.11"
+prost = "0.12"
+tokio-stream = "0.1.14"
+
+[build-dependencies]
+tonic-build = "0.11"
+protoc-rust-grpc = "0.8.2"

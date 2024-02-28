@@ -1,0 +1,26 @@
+syntax = "proto3";
+package helloworld;
+
+service Greeter {
+    rpc SayHello (HelloRequest) returns (HelloReply);
+    rpc Multiply (MultiplyRequest) returns (MultiplyReply);
+    rpc StreamHello (HelloRequest) returns (stream HelloReply);
+}
+
+message MultiplyRequest {
+   int32 number1 = 1;
+   int32 number2 = 2;
+}
+
+message MultiplyReply {
+    string message = 1;
+}
+
+message HelloRequest {
+   string name = 1;
+   string subfix = 2;
+}
+
+message HelloReply {
+    string message = 1;
+}
